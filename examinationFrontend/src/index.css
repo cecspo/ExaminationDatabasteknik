@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Comme:wght@100..900&family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Geist+Mono:wght@100..900&family=Hubot+Sans:ital,wght@0,200..900;1,200..900&family=Macondo&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+* { box-sizing: border-box;}
+
+:root {
+    --text-color: #333333;
+    --background-color: #c9c6c6;
+    --button-color: #b28b8b;
+    --button-hover-color: #8d6767;
+    --border-color: #7c4040;
+}
+
+html, body {
+    margin: 0;
+    /* kolla vad nedan gör */
+    line-height: 1.15; 
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+a:active{
+    color: var(--text-color);
+}
+
+.wrapper {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    height: 100dvh;
+}
+
+.container {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    @media (width >= 768px) {
+        width: 720px;
+    }
+    
+    @media (width >= 1400px) {
+        width: 1320px;
+    }
+
+    @media (width >= 1920px) {
+        width: 1800px;
+    }    
+}
+
+.section-title {
+    padding: 1rem 0;
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h1 {
+        font-size: 1em;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin: 0;   
+        color: var(--text-color);     
+    }
+
+    nav {
+        display: flex;
+        gap: 0.5rem;
+    }
+}
+
+.btn {
+    background-color: var(--button-color);
+    border-width: 1px;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+    padding: 8px;
+    margin-bottom: 1rem;
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.1s ease-in-out, border-color 0.1s ease-in-out, color 0.1s ease-in-out;
+
+    &:hover {
+        background-color: var(--button-hover-color);
+    }
+}
+
+.header-name{
+    margin-bottom: 5px;
+    font-size: 2rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #603e3e, #fff7f7); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+form {
+    max-width: 800px;
+
+    .project-details {
+
+        display: grid;
+              grid-template-columns: auto 1fr auto auto auto;
+              gap: 3rem;
+    }
+
+
+    .form-group {
+        display: grid;
+    }
+    
+    label {
+        margin-bottom: 5px;
+        font-size: 2rem;
+        font-weight: bold;
+        background: linear-gradient(to right, var(--text-color), #b28b8b); 
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    input, select, textarea {
+        font-size: 1rem;
+        font-family: 'Roboto', sans-serif;
+        padding: 8px;
+        margin-bottom: 1rem;
+        resize: none;
+        height: 50px;
+        border: #333333;
+        color: var(--text-color);
+    }
+}
+
+.nav-buttons{
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+  }
+  
+  .project-list {
+      width: 100%;
+  
+      thead {
+          border: 1px solid var(--border-color);
+          padding: 1rem 0;
+      }
+  
+      th{
+          background-color: lightgray;
+          padding: 1rem 10px;
+          text-align: left;
+      }
+  
+      td {
+        cursor: pointer;
+        padding: 8px 10px;
+
+      }
+  
+      tr {
+  
+          &:hover {
+              background-color: #151822;
+          }
+      }
+  
+      .headlines,
+      .project-list-item {
+          display: grid;
+          grid-template-columns: auto 1fr auto auto auto;
+          gap: 3rem;
+  
+          .projectnumber{
+              padding: 0 10px;
+          }
+  
+          .title{
+              padding: 0 10px;
+          }
+  
+          .startdate{
+              padding: 0 10px;
+          }
+  
+          .enddate{
+              padding: 0 10px;
+          }
+  
+          .projectmanager{
+              padding: 0 10px;
+          }
+      }
+  }
