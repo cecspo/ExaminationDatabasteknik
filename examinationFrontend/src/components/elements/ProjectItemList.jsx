@@ -7,6 +7,7 @@ const ProjectItemList = ({project}) => {
     const startDate = project.startDate ? new Date(project.startDate).toLocaleDateString() : "Inget startdatum";
     const endDate = project.endDate ? new Date(project.endDate).toLocaleDateString() : "Inget slutdatum";
 
+    
   return (
       <tr onClick={() => navigate(`${project.projectNumber}`)}>
         <td>{project.projectNumber}</td>

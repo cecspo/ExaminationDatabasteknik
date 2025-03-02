@@ -1,5 +1,4 @@
     import { createContext, useEffect, useState } from "react";
-    import { useNavigate } from "react-router-dom";
     export const ProjectContext = createContext()
 
     export const ProjectProvider = ({children}) => {
@@ -31,29 +30,28 @@
             }
         }
 
-        const updateProject = async (updatedProject) => {
+        const updateProject = async (updatedProject, navigate) => {
             try {
                 const res = await fetch(`${apiUri}/${updatedProject.projectNumber}`, {
                     method: 'PUT',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
+                    headers: {'Content-Type': 'application/json'},
                     body: JSON.stringify(updatedProject)
-                });
+                })
 
-                if (!res.ok) throw new Error('Failed to update project');
+                if (!res.ok) throw new Error('Failed to update project')
                 
-                const data = await res.json();
-                setProject(data); // Uppdatera projektet med den nya informationen
+                const data = await res.json()
+                setProject(data)
                 setProjects(prevProjects => prevProjects.map(proj => proj.projectNumber === data.projectNumber ? data : proj));
                 
-                console.log("Uppdateringen lyckades!"); // Logga success
+                console.log("Uppdateringen lyckades!")
 
-                // Navigera tillbaka till /projects efter uppdateringen
-                navigate('/projects');  // Skickar användaren till projektlistan
+                if (navigate) navigate('/projects')  
+                    return true
 
             } catch (error) {
-                console.error('Error updating project:', error);
+                console.error('Error updating project:', error)
+                    return false
             }
         };
 

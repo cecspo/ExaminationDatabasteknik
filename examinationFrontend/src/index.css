@@ -7,6 +7,7 @@
     --button-color: #b28b8b;
     --button-hover-color: #8d6767;
     --border-color: #7c4040;
+    --hover-color: #b28b8b;
 }
 
 html, body {
@@ -80,6 +81,16 @@ a:active{
     }
 }
 
+h3 {
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: linear-gradient(to right, var(--text-color), #b28b8b); 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-bottom: 10px;
+}
+
 .btn {
     background-color: var(--button-color);
     border-width: 1px;
@@ -98,6 +109,10 @@ a:active{
     &:hover {
         background-color: var(--button-hover-color);
     }
+
+    .btn-create{
+        margin-left: auto;
+    }
 }
 
 .header-name{
@@ -109,25 +124,48 @@ a:active{
     -webkit-text-fill-color: transparent;
 }
 
+.form-layout {
+    display: flex;
+    gap: 50px;
+
+    .left-column, .right-column {
+        flex: 1; 
+        display: flex;
+        flex-direction: column;
+        gap: 15px; 
+    }
+
+    textarea {
+        min-height: 100px;
+    }
+
+    .btn-create {
+        margin-left: auto;
+        margin-top: 20px;
+    }
+}
+
 
 form {
     max-width: 800px;
 
-    .project-details {
+    /* .project-details {
 
         display: grid;
               grid-template-columns: auto 1fr auto auto auto;
               gap: 3rem;
-    }
+    } */
 
 
     .form-group {
-        display: grid;
+        /* display: grid; */
+        display: flex;
+        flex-direction: column;
     }
     
     label {
         margin-bottom: 5px;
-        font-size: 2rem;
+        font-size: 1rem;
         font-weight: bold;
         background: linear-gradient(to right, var(--text-color), #b28b8b); 
         -webkit-background-clip: text;
@@ -140,7 +178,7 @@ form {
         padding: 8px;
         margin-bottom: 1rem;
         resize: none;
-        height: 50px;
+        height: 40px;
         border: #333333;
         color: var(--text-color);
     }
@@ -148,6 +186,7 @@ form {
 
 .nav-buttons{
     display: flex;
+    align-items: flex-start;
     gap: 1rem;
   }
   
@@ -159,11 +198,13 @@ form {
   }
   
   .project-list {
-      width: 100%;
+        width: 100%;
+  
   
       thead {
           border: 1px solid var(--border-color);
           padding: 1rem 0;
+          width: 100%;
       }
   
       th{
@@ -181,7 +222,7 @@ form {
       tr {
   
           &:hover {
-              background-color: #151822;
+              background-color: var(--hover-color);
           }
       }
   

@@ -9,7 +9,7 @@ const CreateProject = () => {
       <section className='section-title'>
           <div className='container'>
             <CreateProjectForm/>     
-            <SectionHeader title={`PROJEKT - SKAPA NYTT`}/>     
+            <SectionHeader title=''/>     
           </div>
       </section>
     </>
